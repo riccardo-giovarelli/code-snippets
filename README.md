@@ -1,2 +1,1 @@
-# code-snippets
-My code snippets
+# My Code Snippets
