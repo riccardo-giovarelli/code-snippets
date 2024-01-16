@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Example</title>
+</head>
+
+<body>
+    <button>Stop doing something</button>
+    <hr>
+    <h1 id="stupid-text"> </h1>
+    <script>
+        window.onload = (event) => {
+            // New interval
+            var loop = setInterval(doSomething, 500);
+
+            // Interval callback
+            function doSomething() {
+                document.getElementById("stupid-text").innerHTML =
+                    document.getElementById("stupid-text").innerHTML == "" ? "I'm doing something!" : "";
+            }
+
+            // Click handler
+            document.querySelector("button").addEventListener(
+                "click",
+                () => {
+                    // Kill interval
+                    clearInterval(loop);
+                }
+            );
+        };
+    </script>
+</body>
+
+</html>

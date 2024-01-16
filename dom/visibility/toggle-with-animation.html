@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Example</title>
+    <style>
+        .stuff-class {
+            border-radius: 100%;
+            width: 250px;
+            height: 250px;
+            margin: 30px auto;
+            background-color: blue;
+            display: none;
+            animation: fade-out 1.2s;
+        }
+
+        .stuff-class.already-visible {
+            display: block;
+        }
+
+        .visible {
+            display: block;
+            animation: fade-in 1.2s;
+        }
+
+        button {
+            display: block;
+            margin: 10px auto;
+        }
+
+        @keyframes fade-in {
+            from {
+                opacity: 0;
+            }
+
+            to {
+                opacity: 1;
+            }
+        }
+
+        @keyframes fade-out {
+            from {
+                opacity: 1;
+            }
+
+            to {
+                opacity: 0;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <button>Toggle stuff</button>
+    <div id="stuff-id" class="stuff-class"></div>
+    <script>
+        window.onload = (event) => {
+            // Toggle class "visibile" on click
+            document.querySelector("button").addEventListener(
+                "click",
+                () => { document.getElementById("stuff-id").classList.toggle("visible"); },
+                false
+            );
+
+            // Remove class "already-visible" when fade-in starts
+            document.addEventListener("animationstart", function (e) {
+                if (e.animationName === "fade-in") {
+                    e.target.classList.add("already-visible");
+                }
+            });
+
+            // Remove class "already-visible" when fade-out ends
+            document.addEventListener("animationend", function (e) {
+                if (e.animationName === "fade-out") {
+                    e.target.classList.remove("already-visible");
+                }
+            });
+
+        };
+    </script>
+</body>
+
+</html>
