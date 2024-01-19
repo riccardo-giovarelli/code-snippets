@@ -12,3 +12,17 @@ export const simplifyString = (text: string): string =>
     .replace(/[\u0300-\u036f]/g, '')
     .toLowerCase()
     .trim();
+
+
+/**
+ * @function capitalizeEachWordsInSentence
+ *
+ * @description The function capitalizes each words in a sentence
+ *
+ * @param {string} sentence Sentence to capitalize
+ * @return {string} Capitalized sentence
+ */
+export const capitalizeEachWordsInSentence = (sentence: string): string =>
+  sentence.split(" ").map((word: string) =>
+    word[0].toUpperCase() + word.substring(1)
+  ).join(" ");
