@@ -6,7 +6,7 @@
  * @param {string} str String to check
  * @returns {boolean} True if the provided string is a json, false otherwise
  */
-export const isJson = (str: string): boolean => {
+const isJson = (str: string): boolean => {
   try {
     JSON.parse(str);
   } catch (_) {

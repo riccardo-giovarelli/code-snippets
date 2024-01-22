@@ -6,7 +6,7 @@
  * @param {string} text Text to simplify
  * @returns {string} Text simplified and cleaned
  */
-export const simplifyString = (text: string): string =>
+const simplifyString = (text: string): string =>
   text
     .normalize('NFD')
     .replace(/[\u0300-\u036f]/g, '')
@@ -21,7 +21,7 @@ export const simplifyString = (text: string): string =>
  * @param {string} sentence Sentence to capitalize
  * @return {string} Capitalized sentence
  */
-export const capitalizeEachWordsInSentence = (sentence: string): string =>
+const capitalizeEachWordsInSentence = (sentence: string): string =>
   sentence
     .split(' ')
     .map((word: string) => word[0].toUpperCase() + word.substring(1))
@@ -37,7 +37,7 @@ export const capitalizeEachWordsInSentence = (sentence: string): string =>
  * @param {boolean} back Position of zeros. If true after the original number, before otherwise.
  * @returns {string} The original number filled with zeros
  */
-export const fillZero = (width: number, number: string, back: boolean = false) => {
+const fillZero = (width: number, number: string, back: boolean = false) => {
   const zerosNeeded = width - number.length >= 0 ? width - number.length : 0;
   const zerosString = [...Array(zerosNeeded)].map((_) => '0').join('');
   return back ? number + zerosString : zerosString + number;
