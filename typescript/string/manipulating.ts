@@ -1,16 +1,20 @@
 /**
- * @function capitalizeEachWordsInSentence
+ * @function capitalizeEachWordsInString
  *
- * @description The function capitalizes each words in a sentence
+ * @description The function capitalizes each words in a string
  *
- * @param {string} sentence Sentence to capitalize
- * @return {string} Capitalized sentence
+ * @param {string} sentence String to capitalize
+ * @return {string} Capitalized string
  */
-const capitalizeEachWordsInSentence = (sentence: string): string =>
+const capitalizeEachWordsInString = (sentence: string): string =>
   sentence
     .split(' ')
     .map((word: string) => word[0].toUpperCase() + word.substring(1))
     .join(' ');
+/**
+ * capitalizeEachWordsInString working example:
+ * https://codepen.io/riccardo-giovarelli/pen/oNVwJyY
+ */
 
 /**
  * @function fillZero
@@ -27,6 +31,10 @@ const fillZero = (width: number, number: string, back: boolean = false): string 
   const zerosString = [...Array(zerosNeeded)].map((_) => '0').join('');
   return back ? number + zerosString : zerosString + number;
 };
+/**
+ * fillZero working example:
+ * https://codepen.io/riccardo-giovarelli/pen/rNRwPVx
+ */
 
 /**
  * @function simplifyString
@@ -42,3 +50,7 @@ const simplifyString = (text: string): string =>
     .replace(/[\u0300-\u036f]/g, '')
     .toLowerCase()
     .trim();
+/**
+ * simplifyString working example:
+ * https://codepen.io/riccardo-giovarelli/pen/zYbzedZ
+ */
