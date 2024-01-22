@@ -1,19 +1,4 @@
 /**
- * @function simplifyString
- *
- * @description The function simplifies and clean a text
- *
- * @param {string} text Text to simplify
- * @returns {string} Text simplified and cleaned
- */
-const simplifyString = (text: string): string =>
-  text
-    .normalize('NFD')
-    .replace(/[\u0300-\u036f]/g, '')
-    .toLowerCase()
-    .trim();
-
-/**
  * @function capitalizeEachWordsInSentence
  *
  * @description The function capitalizes each words in a sentence
@@ -37,8 +22,23 @@ const capitalizeEachWordsInSentence = (sentence: string): string =>
  * @param {boolean} back Position of zeros. If true after the original number, before otherwise.
  * @returns {string} The original number filled with zeros
  */
-const fillZero = (width: number, number: string, back: boolean = false) => {
+const fillZero = (width: number, number: string, back: boolean = false): string => {
   const zerosNeeded = width - number.length >= 0 ? width - number.length : 0;
   const zerosString = [...Array(zerosNeeded)].map((_) => '0').join('');
   return back ? number + zerosString : zerosString + number;
 };
+
+/**
+ * @function simplifyString
+ *
+ * @description The function simplifies and clean a text
+ *
+ * @param {string} text Text to simplify
+ * @returns {string} Text simplified and cleaned
+ */
+const simplifyString = (text: string): string =>
+  text
+    .normalize('NFD')
+    .replace(/[\u0300-\u036f]/g, '')
+    .toLowerCase()
+    .trim();

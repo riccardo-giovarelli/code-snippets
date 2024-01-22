@@ -1,7 +1,7 @@
 /**
  * @function getCharsOccurrenceInString
  *
- * @description The function return the number of occurrences of a character in a string
+ * @description The function returns the number of occurrences of every character of a string
  *
  * @param {string} text Input string to parse
  * @returns {[key: string]: number} Count of multiple occurrences for the provided string
