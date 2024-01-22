@@ -13,7 +13,6 @@ export const simplifyString = (text: string): string =>
     .toLowerCase()
     .trim();
 
-
 /**
  * @function capitalizeEachWordsInSentence
  *
@@ -23,6 +22,23 @@ export const simplifyString = (text: string): string =>
  * @return {string} Capitalized sentence
  */
 export const capitalizeEachWordsInSentence = (sentence: string): string =>
-  sentence.split(" ").map((word: string) =>
-    word[0].toUpperCase() + word.substring(1)
-  ).join(" ");
+  sentence
+    .split(' ')
+    .map((word: string) => word[0].toUpperCase() + word.substring(1))
+    .join(' ');
+
+/**
+ * @function fillZero
+ *
+ * @description Fill a number with zeros
+ *
+ * @param {number} width The final length of the number including the zeros
+ * @param {string} number Number to fill with zeros
+ * @param {boolean} back Position of zeros. If true after the original number, before otherwise.
+ * @returns {string} The original number filled with zeros
+ */
+export const fillZero = (width: number, number: string, back: boolean = false) => {
+  const zerosNeeded = width - number.length >= 0 ? width - number.length : 0;
+  const zerosString = [...Array(zerosNeeded)].map((_) => '0').join('');
+  return back ? number + zerosString : zerosString + number;
+};
