@@ -14,3 +14,7 @@ const isJson = (str: string): boolean => {
   }
   return true;
 };
+/**
+ * isJson working example:
+ * https://codepen.io/riccardo-giovarelli/pen/OJqgKJm
+ */

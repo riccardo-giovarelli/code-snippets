@@ -13,3 +13,7 @@ const getCharsOccurrenceInString = (text: string): { [key: string]: number } => 
   });
   return count;
 };
+/**
+ * getCharsOccurrenceInString working example:
+ * https://codepen.io/riccardo-giovarelli/pen/poYwGLg
+ */
